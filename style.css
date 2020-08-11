@@ -12,7 +12,7 @@ body {
 h1 {
   font-family: Pacifico, cursive;
   margin: 0;
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 400;
   line-height: 110%;
 }
@@ -39,7 +39,7 @@ footer {
   left: 0;
   right: 0;
   text-align: center;
-  font-size: 70%;
+  font-size: 60%;
   font-family: Roboto, Open Sans, Arial, sans-serif;
 }
 a {
@@ -78,6 +78,6 @@ p {
             transform: translateX(10%);
   }
   h1 {
-    font-size: 30px;
+    font-size: 25px;
   }
 }

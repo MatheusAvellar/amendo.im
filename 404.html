@@ -6,11 +6,28 @@
   <meta name="author" content="Matheus Avellar">
   <meta name="description" content="Não tem um amendoim.">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>html,body{height:100%;width:100%;font-family:Roboto,Open Sans,Arial,sans-serif;font-display:fallback}body{background-color:#fff;display:flex;justify-content:center;align-items:center;margin:0;flex-direction:column}svg{display:block;width:25%;min-width:50px;min-height:50px}h1{margin:1em 0;font-size:40px;font-weight:400}p{margin:0}a{text-decoration:none;color:#1a1a1a}a span{font-size:20px;font-family:Pacifico,cursive;text-decoration:underline}a:hover span{color:#ff6e37}@media screen and (max-width: 600px){h1{font-size:30px}@supports(font-size:9vmin){h1{font-size:9vmin}p{font-size:5vmin}a span{font-size:5.8vmin}}}</style>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style>a{text-decoration:none}a span{font-size:20px;font-family:Pacifico,cursive;text-decoration:underline}</style>
 </head>
 <body>
-  <h1>:(</h1>
-  <p><a href="/">Voltar para <span>amendo.im</span></a></p>
-  <link href="https://fonts.googleapis.com/css?family=Pacifico&text=adeimno." rel="stylesheet">
+  <!-- Fotografia por Petr Kratochvil
+       Disponível em: www.publicdomainpictures.net/en/browse-author.php?a=1 -->
+  <noscript>
+    <main aria-label="Fotografia de um morango." style="background-image:url(/not-amendoim/1.png)"></main>
+  </noscript>
+  <footer>
+    <p>
+      <b>404</b> – Não é um amendoim 🙁<br>
+      <a href="/">Voltar para <span>amendo.im</span></a>
+    </p>
+  </footer>
+  <script>
+const main = document.createElement("main");
+main.ariaLabel = "Fotografia, mas não de um amendoim.";
+if(!~~(Math.random()*100)) main.style.backgroundImage = "url(./not-amendoim/gold.png)";
+else main.style.backgroundImage = `url(./not-amendoim/${~~(Math.random()*6)+1}.png)`;
+document.body.prepend(main);
+  </script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap&text=amendoi.">
 </body>
 </html>
