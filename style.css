@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: > 0.001%
+*/
+
 /* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
 
 html,
@@ -23,7 +30,6 @@ main {
   height: 100%;
   -webkit-background-size: contain;
      -moz-background-size: contain;
-       -o-background-size: contain;
           background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -59,6 +65,189 @@ p {
   height: 1em;
   fill: hsl(0, 75%, 40%);
 }
+#dark-mode {
+  --x: 0px;
+  --y: 0px;
+  position: fixed;
+  z-index: 1;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-image: -webkit-radial-gradient(rgb(255,247,0,.2) 0%, rgb(255,229,0,.22) 2.5%, rgba(0,0,0,.85) 10%);
+  background-image: -moz-radial-gradient(rgb(255,247,0,.2) 0%, rgb(255,229,0,.22) 2.5%, rgba(0,0,0,.85) 10%);
+  background-image: -o-radial-gradient(rgb(255,247,0,.2) 0%, rgb(255,229,0,.22) 2.5%, rgba(0,0,0,.85) 10%);
+  background-image: radial-gradient(rgb(255,247,0,.2) 0%, rgb(255,229,0,.22) 2.5%, rgba(0,0,0,.85) 10%);
+  -webkit-transform: translate( -webkit-calc(var(--x) - 50%), -webkit-calc(var(--y) - 50%) );
+     -moz-transform: translate( -moz-calc(var(--x) - 50%), -moz-calc(var(--y) - 50%) );
+      -ms-transform: translate( calc(var(--x) - 50%), calc(var(--y) - 50%) );
+       -o-transform: translate( calc(var(--x) - 50%), calc(var(--y) - 50%) );
+          transform: translate( calc(var(--x) - 50%), calc(var(--y) - 50%) );
+  will-change: transform;
+  opacity: 0;
+  -webkit-transition: opacity .1s ease;
+  -o-transition: opacity .1s ease;
+  -moz-transition: opacity .1s ease;
+  transition: opacity .1s ease;
+}
+#dark-mode-wrapper {
+  display: none;
+}
+@supports(--z:1px) and (background:radial-gradient(#000 0%, #fff 100%)) {
+  .night #dark-mode {
+    opacity: 1;
+  }
+  #dark-mode-wrapper.has-js {
+    display: block;
+    position: fixed;
+    right: 2px;
+    top: 0;
+    z-index: 2;
+  }
+}
+.toggle-checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.toggle-slot {
+  position: relative;
+  font-size: 2.5px;
+  height: 10em;
+  width: 20em;
+  margin: 1em auto 2em;
+  border: 3px solid #e4e7ec;
+  -webkit-border-radius: 10em;
+     -moz-border-radius: 10em;
+          border-radius: 10em;
+  background-color: white;
+  -webkit-transition: background-color 250ms;
+  -o-transition: background-color 250ms;
+  -moz-transition: background-color 250ms;
+  transition: background-color 250ms;
+  opacity: .5;
+}
+.night .toggle-slot,
+.toggle-slot:hover {
+  opacity: 1;
+}
+.night .toggle-slot {
+  -webkit-box-shadow: 0 0 15px 0 #fff;
+     -moz-box-shadow: 0 0 15px 0 #fff;
+          box-shadow: 0 0 15px 0 #fff;
+}
+.toggle-checkbox:checked ~ .toggle-slot {
+  background-color: #374151;
+}
+.toggle-button {
+  -webkit-transform: translate(11.75em, 1.75em);
+     -moz-transform: translate(11.75em, 1.75em);
+      -ms-transform: translate(11.75em, 1.75em);
+       -o-transform: translate(11.75em, 1.75em);
+          transform: translate(11.75em, 1.75em);
+  position: absolute;
+  height: 6.5em;
+  width: 6.5em;
+  -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
+  background-color: #ffeccf;
+  -webkit-box-shadow: inset 0px 0px 0px 0.75em #ffbb52;
+     -moz-box-shadow: inset 0px 0px 0px 0.75em #ffbb52;
+          box-shadow: inset 0px 0px 0px 0.75em #ffbb52;
+  -webkit-transition: background-color 250ms, border-color 250ms, -webkit-transform .25s ease;
+  transition: background-color 250ms, border-color 250ms, -webkit-transform .25s ease;
+  -o-transition: background-color 250ms, border-color 250ms, -o-transform .25s ease;
+  -moz-transition: background-color 250ms, border-color 250ms, transform .25s ease, -moz-transform .25s ease;
+  transition: background-color 250ms, border-color 250ms, transform .25s ease;
+  transition: background-color 250ms, border-color 250ms, transform .25s ease, -webkit-transform .25s ease, -moz-transform .25s ease, -o-transform .25s ease;
+}
+.toggle-checkbox:checked ~ .toggle-slot .toggle-button {
+  background-color: #485367;
+  -webkit-box-shadow: inset 0px 0px 0px 0.75em white;
+     -moz-box-shadow: inset 0px 0px 0px 0.75em white;
+          box-shadow: inset 0px 0px 0px 0.75em white;
+  -webkit-transform: translate(1.75em, 1.75em);
+     -moz-transform: translate(1.75em, 1.75em);
+      -ms-transform: translate(1.75em, 1.75em);
+       -o-transform: translate(1.75em, 1.75em);
+          transform: translate(1.75em, 1.75em);
+}
+.sun-icon {
+  position: absolute;
+  height: 6em;
+  width: 6em;
+  color: #ffbb52;
+}
+.sun-icon-wrapper {
+  position: absolute;
+  height: 6em;
+  width: 6em;
+  opacity: 1;
+  -webkit-transform: translate(2em, 2em) rotate(15deg);
+     -moz-transform: translate(2em, 2em) rotate(15deg);
+      -ms-transform: translate(2em, 2em) rotate(15deg);
+       -o-transform: translate(2em, 2em) rotate(15deg);
+          transform: translate(2em, 2em) rotate(15deg);
+  -webkit-transform-origin: 50% 50%;
+     -moz-transform-origin: 50% 50%;
+      -ms-transform-origin: 50% 50%;
+       -o-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-transition: opacity 150ms, -webkit-transform .25s ease;
+  transition: opacity 150ms, -webkit-transform .25s ease;
+  -o-transition: opacity 150ms, -o-transform .25s ease;
+  -moz-transition: opacity 150ms, transform .25s ease, -moz-transform .25s ease;
+  transition: opacity 150ms, transform .25s ease;
+  transition: opacity 150ms, transform .25s ease, -webkit-transform .25s ease, -moz-transform .25s ease, -o-transform .25s ease;
+}
+.toggle-checkbox:checked ~ .toggle-slot .sun-icon-wrapper {
+  opacity: 0;
+  -webkit-transform: translate(3em, 2em) rotate(0deg);
+     -moz-transform: translate(3em, 2em) rotate(0deg);
+      -ms-transform: translate(3em, 2em) rotate(0deg);
+       -o-transform: translate(3em, 2em) rotate(0deg);
+          transform: translate(3em, 2em) rotate(0deg);
+}
+.moon-icon {
+  position: absolute;
+  height: 6em;
+  width: 6em;
+  color: white;
+}
+.moon-icon-wrapper {
+  position: absolute;
+  height: 6em;
+  width: 6em;
+  opacity: 0;
+  -webkit-transform: translate(11em, 2em) rotate(0deg);
+     -moz-transform: translate(11em, 2em) rotate(0deg);
+      -ms-transform: translate(11em, 2em) rotate(0deg);
+       -o-transform: translate(11em, 2em) rotate(0deg);
+          transform: translate(11em, 2em) rotate(0deg);
+  -webkit-transform-origin: 50% 50%;
+     -moz-transform-origin: 50% 50%;
+      -ms-transform-origin: 50% 50%;
+       -o-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-transition: opacity 150ms, -webkit-transform 500ms cubic-bezier(.26,2.5,.46,.71);
+  transition: opacity 150ms, -webkit-transform 500ms cubic-bezier(.26,2.5,.46,.71);
+  -o-transition: opacity 150ms, -o-transform 500ms cubic-bezier(.26,2.5,.46,.71);
+  -moz-transition: opacity 150ms, transform 500ms cubic-bezier(.26,2.5,.46,.71), -moz-transform 500ms cubic-bezier(.26,2.5,.46,.71);
+  transition: opacity 150ms, transform 500ms cubic-bezier(.26,2.5,.46,.71);
+  transition: opacity 150ms, transform 500ms cubic-bezier(.26,2.5,.46,.71), -webkit-transform 500ms cubic-bezier(.26,2.5,.46,.71), -moz-transform 500ms cubic-bezier(.26,2.5,.46,.71), -o-transform 500ms cubic-bezier(.26,2.5,.46,.71);
+}
+.toggle-checkbox:checked ~ .toggle-slot .moon-icon-wrapper {
+  opacity: 1;
+  -webkit-transform: translate(12em, 2em) rotate(-15deg);
+     -moz-transform: translate(12em, 2em) rotate(-15deg);
+      -ms-transform: translate(12em, 2em) rotate(-15deg);
+       -o-transform: translate(12em, 2em) rotate(-15deg);
+          transform: translate(12em, 2em) rotate(-15deg);
+}
 
 .hidden {
   font-size: 0;
@@ -79,5 +268,22 @@ p {
   }
   h1 {
     font-size: 25px;
+  }
+}
+@media screen and (min-height: 1000px) {
+  footer {
+    bottom: 35%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  #dark-mode-wrapper.has-js {
+    right: 20%;
+    top: 20%;
+  }
+}
+@media screen and (min-width: 2000px) {
+  #dark-mode-wrapper.has-js {
+    right: 35%;
+    top: 20%;
   }
 }

@@ -29,6 +29,7 @@
   <link rel="alternate stylesheet" type="text/css" href="cursed.css" title="Cursed">
 </head>
 <body>
+  <div id="dark-mode" aria-hidden="true"></div>
   <!-- Ícone de amendoim em SVG por Freepik (flaticon.com/authors/freepik)
        Disponível em flaticon.com/free-icon/peanut_995205
 
@@ -45,6 +46,65 @@
       por <a href="http://github.com/MatheusAvellar">Matheus Avellar</a>
     </p>
   </footer>
+  <div id="dark-mode-wrapper" aria-hidden="true">
+    <!-- Botão de modo escuro adaptado de:
+        https://codepen.io/bheberer/pen/BaNZKmq -->
+    <label for="dark-mode-checkbox">
+      <input id="dark-mode-checkbox" class="toggle-checkbox" type="checkbox">
+      <div class='toggle-slot'>
+        <div class="sun-icon-wrapper">
+          <svg viewBox="0 0 24 24"><g fill="none" stroke="#ffbb52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2"></path><path d="M12 21v2"></path><path d="M4.22 4.22l1.42 1.42"></path><path d="M18.36 18.36l1.42 1.42"></path><path d="M1 12h2"></path><path d="M21 12h2"></path><path d="M4.22 19.78l1.42-1.42"></path><path d="M18.36 5.64l1.42-1.42"></path></g></svg>
+        </div>
+        <div class='toggle-button'></div>
+        <div class='moon-icon-wrapper'>
+          <svg viewBox="0 0 24 24"><path fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3A7 7 0 0 0 21 12.79z"></path></svg>
+        </div>
+      </div>
+    </label>
+    <script type="text/javascript">
+      // Áudio por: https://freesound.org/s/406/
+      const click_on = new Audio();
+      click_on.src = "./click_on.mp3";
+      const click_off = new Audio();
+      click_off.src = "./click_off.mp3";
+
+      function px(v) { return `${v}px`; }
+
+      const wrapper = document.getElementById("dark-mode-wrapper");
+      wrapper.classList.add("has-js");
+
+      const dmode = document.getElementById("dark-mode");
+      let size = 0;
+      function resizeDM() {
+        size = Math.max(innerWidth,innerHeight);
+        dmode.style.width = px(size*2);
+        dmode.style.height = px(size*2);
+      }
+      resizeDM();
+      onresize = resizeDM;
+
+      const cb = document.getElementById("dark-mode-checkbox");
+      cb.onchange = e => {
+        if(cb.checked) {
+          click_off.currentTime = 0;
+          click_on.pause();
+          click_off.play();
+          document.body.classList.add("night");
+        } else {
+          click_on.currentTime = 0;
+          click_off.pause();
+          click_on.play();
+          document.body.classList.remove("night");
+        }
+      };
+
+      cb.onclick = onmousemove = e => {
+        if(!cb.checked) return;
+        dmode.style.setProperty("--x", px(e.pageX));
+        dmode.style.setProperty("--y", px(e.pageY));
+      };
+    </script>
+  </div>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap&text=amendoi.">
 </body>
 </html>
