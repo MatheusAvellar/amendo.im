@@ -24,6 +24,7 @@ h1 {
   line-height: 110%;
 }
 main {
+  display: block;
   width: 80%;
   max-width: 400px;
   margin: auto;
@@ -41,6 +42,7 @@ main {
 }
 footer {
   position: fixed;
+  display: block;
   bottom: 0;
   left: 0;
   right: 0;
@@ -66,8 +68,6 @@ p {
   fill: hsl(0, 75%, 40%);
 }
 #dark-mode {
-  --x: 0px;
-  --y: 0px;
   position: fixed;
   z-index: 1;
   pointer-events: none;
@@ -95,6 +95,10 @@ p {
   display: none;
 }
 @supports(--z:1px) and (background:radial-gradient(#000 0%, #fff 100%)) {
+  #dark-mode {
+    --x: 0px;
+    --y: 0px;
+  }
   .night #dark-mode {
     opacity: 1;
   }
