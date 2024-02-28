@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>404 - not found</title>
-  <meta name="author" content="Matheus Avellar">
-  <meta name="description" content="Não tem um amendoim.">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <style>a{text-decoration:none}a span{font-size:20px;font-family:Pacifico,cursive;text-decoration:underline}</style>
+	<meta charset="utf-8">
+	<title>404 - not found</title>
+	<meta name="author" content="Matheus Avellar">
+	<meta name="description" content="Não tem um amendoim.">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style>a{text-decoration:none}a span{font-size:20px;font-family:Pacifico,cursive;text-decoration:underline}</style>
 </head>
 <body>
-  <!-- Fotografia por Petr Kratochvil
-       Disponível em: www.publicdomainpictures.net/en/browse-author.php?a=1 -->
-  <noscript>
-    <main aria-label="Fotografia de um morango." style="background-image:url(/not-amendoim/1.png)"></main>
-  </noscript>
-  <footer>
-    <p>
-      <b>404</b> – Não é um amendoim 🙁<br>
-      <a href="/">Voltar para <span>amendo.im</span></a>
-    </p>
-  </footer>
-  <script>
+	<!-- Fotografia por Petr Kratochvil
+			 Disponível em: www.publicdomainpictures.net/en/browse-author.php?a=1 -->
+	<noscript>
+		<main aria-label="Fotografia de um morango." style="background-image:url(/not-amendoim/1.png)"></main>
+	</noscript>
+	<footer>
+		<p>
+			<b>404</b> – Não é um amendoim 🙁<br>
+			<a href="/">Voltar para <span>amendo.im</span></a>
+		</p>
+	</footer>
+	<script>
 const main = document.createElement("main");
 main.ariaLabel = "Fotografia, mas não de um amendoim.";
 if(!~~(Math.random()*100)) main.style.backgroundImage = "url(./not-amendoim/gold.png)";
 else main.style.backgroundImage = `url(./not-amendoim/${~~(Math.random()*6)+1}.png)`;
 document.body.prepend(main);
-  </script>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap&text=amendoi.">
+	</script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap&text=amendoi.">
 </body>
 </html>
